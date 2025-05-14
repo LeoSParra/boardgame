@@ -1,0 +1,18 @@
+package com.board.game.repository;
+
+import com.board.game.model.Player;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface PlayerRepository extends JpaRepository<Player, Long> {
+
+    List<Player> findAll();
+
+    Player save(Player player);
+
+    Player findByPlayerId(Long playerId);
+
+    Player findByName(String name);
+
+}
